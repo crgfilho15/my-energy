@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <title>MyEnergy</title>
+</head>
+
+<body>
+    <header>
+        <div class="cabecalho">
+            <div class="logotipo">
+                <i class="bolt fa-solid fa-bolt"></i>
+                <h1 class="my-energy">MyEnergy</h1>
+            </div>
+            <div class="sobre-nos">
+                <button class="botao" type="button">Sobre Nós</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="divisor"></div>
+
+    <main>
+        <div class="corpo">
+
+            <!-- Quadro de Cadastro de Aparelho -->
+            <div class="quadro">
+                <div class="espaco-titulo-quadro">
+                    <span class="titulo-quadro">Cadastrar Aparelho</span>
+                </div>
+                <div class="corpo-quadro">
+                    <div class="quadro-info">
+                        <span class="label-quadro">Nome do Aparelho:</span>
+                        <input class="input-quadro" type="text">
+                    </div>
+                    <div class="quadro-info">
+                        <span class="label-quadro">Potência (W):</span>
+                        <input class="input-quadro" type="number" min="0">
+                    </div>
+                    <div class="quadro-info">
+                        <span class="label-quadro">Tempo de Uso por Dia (horas):</span>
+                        <input class="input-quadro" type="number" min="0">
+                    </div>
+                    <div class="quadro-info">
+                        <span class="label-quadro">Tempo de Uso por Dia (minutos):</span>
+                        <input class="input-quadro" type="number" min="0">
+                    </div>
+                    <div class="quadro-botao">
+                        <button class="botao" type="button">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quadro de Exibição de Aparelhos Cadastrados -->
+            <div class="quadro">
+                <div class="espaco-titulo-quadro">
+                    <span class="titulo-quadro">Aparelhos Cadastrados</span>
+                </div>
+                <div class="tabela-quadro">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aparelho</th>
+                                <th>Potência (W)</th>
+                                <th>Tempo de Uso por Dia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Notebook</td>
+                                <td>90</td>
+                                <td>4 horas/dia</td>
+                                <td class="botao-tabela"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                <td class="botao-tabela"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Geladeira</td>
+                                <td>400</td>
+                                <td>24 horas/dia</td>
+                                <td class="botao-tabela"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                <td class="botao-tabela"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Chuveiro</td>
+                                <td>6000</td>
+                                <td>20 min/dia</td>
+                                <td class="botao-tabela"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                <td class="botao-tabela"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quadro de Descrição do Consumo -->
+            <div class="quadro">
+                <div class="espaco-titulo-quadro">
+                    <span class="titulo-quadro">Entenda seu Consumo</span>
+                </div>
+                <div class="tabela-quadro">
+                    <table class="tabela-valores">
+                        <tbody>
+                          <tr>
+                            <th>Serviço de distribuição de energia</th>
+                            <td>R$22.48</td>
+                          </tr>
+                          <tr>
+                            <th>Compra de energia (187 kWh)</th>
+                            <td>R$43.61</td>
+                          </tr>
+                          <tr>
+                            <th>Serviço de transmissão</th>
+                            <td>R$8.53</td>
+                          </tr>
+                          <tr>
+                            <th>Encargos setoriais</th>
+                            <td>R$16.56</td>
+                          </tr>
+                          <tr>
+                            <th>Impostos diretos e encargos</th>
+                            <td>R$25.85</td>
+                          </tr>
+                          <tr>
+                            <th>Iluminação pública</th>
+                            <td>R$9.77</td>
+                          </tr>
+                          <tr>
+                            <th>Outros serviços</th>
+                            <td>R$0</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                </div>
+            </div>
+
+            <!-- Quadro de Valor Final -->
+            <div class="quadro max-height">
+                <div class="espaco-titulo-quadro">
+                    <span class="titulo-quadro">Valor Total Estimado</span>
+                </div>
+                <div class="campo-valor-final">
+                    <span class="valor-final">R$126,80</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="divisor espacamento-top"></div>
+    
+    <p class="direitos-pagina">© 2024 Carlos Roberto Garcia / MyEnergy. Todos os direitos reservados.</p>
+
+    <footer class="rodape">
+        <div class="div-rodape">
+            <div class="info-rodape">
+                <div class="titulo-rodape">
+                    <span>Contato</span>
+                </div>
+                <a href="mailto:crgfilho15@gmail.com" target="_blank">
+                    <img class="img" src="https://logosmarcas.net/wp-content/uploads/2020/11/Gmail-Logo.png" alt="">
+                </a>
+            </div>
+    
+            <div class="info-rodape tam-max">
+                <div class="titulo-rodape-texto">
+                    <span>Projeto</span>
+                </div>
+                <div class="texto-scroll">
+                    <p>Este projeto é open source e foi criado com o objetivo de ajudar as pessoas a simularem o custo da conta de energia elétrica em suas casas. Estamos abertos para colaborações e melhorias, então sinta-se à vontade para contribuir no nosso repositório no GitHub.</p>
+                    
+                    <p>Por favor, note que esta é uma iniciativa independente e não possui relação com nenhuma concessionária de energia elétrica. Nosso objetivo é fornecer uma ferramenta útil e transparente para ajudar os usuários a entenderem melhor seus gastos com energia.</p>
+                </div>
+            </div>
+    
+            <div class="info-rodape">
+                <div class="titulo-rodape">
+                    <span class="sem-quebra">Redes Sociais</span>
+                </div>
+                <a href="https://www.linkedin.com/in/carlosrobertogarcia/" target="_blank">
+                    <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png" alt="">
+                </a>
+                <a href="https://github.com/crgfilho15" target="_blank">
+                    <img class="img" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

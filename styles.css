@@ -1,0 +1,317 @@
+:root {
+    --azul-escuro: #06234a;
+    --cor-principal: #EC7611;
+    --cor-principal2: #0096D1;
+    --cor-hover: #EC7611;
+}
+
+body, header {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: antiquewhite;
+    color: black;
+    /* background-color: #0096D1; */
+}
+
+/* Header */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: antiquewhite;
+    max-height: 50px;
+    margin: 0;
+    /* min-width: 360px; */
+}
+
+.logotipo {
+    display: flex;
+    align-items: center;
+}
+
+.bolt {
+    font-size: 30px;
+    color: var(--cor-principal);
+}
+
+.my-energy {
+    margin-left: 10px;
+    color: var(--cor-principal2);
+    /* font-size: 3vw; */
+}
+
+/* .sobre-nos {
+    display: flex;
+    background-color: var(--cor-principal2);
+    border-radius: 10px;
+    padding: 0 5px;
+    margin: 0;
+    max-height: 40px;
+    align-items: center;
+    justify-content: center;
+} */
+
+.botao {
+    background-color: var(--cor-principal2);
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: var(--cor-hover); /* Estilo para quando o mouse passa por cima */
+    cursor: pointer; /* Altera o cursor quando o mouse passa por cima */
+}
+
+.texto-sobre-nos {
+    color: antiquewhite;
+    /* font-weight: normal; */
+    /* font-size: 2vw; */
+}
+
+/* Divisor */
+
+.divisor {
+    background-color: var(--cor-principal);
+    min-height: 5px;
+    min-width: 100%;
+    /* margin: 0 0 20px 0; */
+}
+
+/* Main */
+
+.corpo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.quadro {
+    border-width: 2px;
+    border-color: var(--cor-principal2);
+    border-style: solid;
+    border-radius: 10px;
+    margin: 20px 10px 0 10px;
+    /* min-width: 30%; */
+    /* margin: 0 10px; */
+    /* padding: 10px; */
+}
+
+.espaco-titulo-quadro {
+    text-align: center;
+    background-color: var(--cor-principal2);
+    border-radius: 5px 5px 0 0;
+    padding: 5px;
+}
+
+.titulo-quadro {
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+.corpo-quadro {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    /* align-items: center; */
+}
+
+.quadro-info {
+    display: flex;
+    /* max-width: 90%; */
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+.label-quadro {
+    font-size: 15px;
+}
+
+.input-quadro {
+    background-color: antiquewhite;
+    margin-left: 10px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-width: 1px;
+    border-color: var(--cor-principal2);
+    border-style: solid;
+    color: black;
+    /* max-width: 50%; */
+    box-sizing: border-box;
+}
+
+/* input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; Remove a setinha do input do tipo number
+    margin: 0;
+} */
+
+.input-quadro:hover {
+    border-color: var(--cor-principal);
+}
+
+.input-quadro:focus {
+    outline-color: var(--cor-principal); /* Define a cor da borda quando o input está focado */
+    caret-color: var(--cor-principal2);
+}
+
+.quadro-botao {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+
+.tabela-quadro {
+    padding: 10px;
+}
+
+th, td {
+    border: 1px solid var(--cor-principal2);
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+th {
+    background-color: var(--cor-principal2);
+    color: antiquewhite;
+}
+
+tbody tr:hover td:not(.botao-tabela) {
+    background-color: var(--cor-principal); /* Define uma cor de fundo para as células quando o mouse passa por cima */
+    border-color: var(--cor-hover);
+    color: antiquewhite; /* Altera a cor do texto das células quando o mouse passa por cima */
+    font-weight: bold;
+}
+
+.botao-tabela {
+    border: none;
+    padding: 4px;
+}
+
+.botao-excluir {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao-editar {
+    background-color: var(--cor-principal);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tabela-valores tr:hover th {
+    background-color: var(--cor-principal); /* Define uma cor de fundo para as células quando o mouse passa por cima */
+    border-color: var(--cor-hover);
+    color: antiquewhite; /* Altera a cor do texto das células quando o mouse passa por cima */
+    font-weight: bold;
+}
+
+.max-height {
+    max-height: 80px;
+}
+
+.campo-valor-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.valor-final {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--cor-principal);
+}
+
+/* Divisor */
+
+.espacamento-top {
+    margin-top: 20px;
+}
+
+/* Direitos da Página */
+
+.direitos-pagina {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 30px; */
+    width: 100%;
+    box-sizing: border-box;
+    /* position: fixed; */
+    /* left: 0; */
+    /* bottom: 0; */
+}
+
+.div-rodape {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.info-rodape {
+    margin: 0 10px;
+    text-align: justify;
+}
+
+.titulo-rodape {
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--cor-principal2);
+}
+
+.titulo-rodape-texto {
+    border-bottom: 3px solid var(--cor-principal2);
+    margin-bottom: 5px;
+}
+
+.tam-max {
+    max-width: 60%;
+}
+
+/* .sem-quebra {
+    white-space: nowrap; Impede a quebra de linha
+} */
+
+.texto-scroll {
+    overflow-y: scroll; /* Adiciona uma barra de rolagem vertical quando necessário */
+    height: 100px; /* Altura máxima do texto antes da barra de rolagem aparecer */
+    margin-bottom: 10px;
+}
+
+.img {
+    /* max-width: 15%; */
+    width: 3vw;
+    height: auto;
+    margin: 5px;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado */
+}
