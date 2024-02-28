@@ -26,7 +26,11 @@ body {
     color: antiquewhite;
     max-height: 50px;
     margin: 0;
-    /* min-width: 360px; */
+    /* background-color: var(--cor-principal); */
+    border-style: solid;
+    border-width: 4px;
+    border-color: var(--cor-principal);
+    border-radius: 0 0 15px 15px;
 }
 
 .logotipo {
@@ -284,6 +288,12 @@ tbody tr:hover td:not(.botao-tabela) {
 .titulo-rodape {
     margin-bottom: 20px;
     border-bottom: 3px solid var(--cor-principal2);
+}
+
+.img-contato {
+    width: 4vw;
+    height: auto;
+    margin: 5px;
 }
 
 .titulo-rodape-texto {
