@@ -197,7 +197,7 @@ tbody tr:hover td:not(.botao-tabela) {
     background-color: var(--cor-principal); /* Define uma cor de fundo para as células quando o mouse passa por cima */
     border-color: var(--cor-hover);
     color: antiquewhite; /* Altera a cor do texto das células quando o mouse passa por cima */
-    font-weight: bold;
+    /* font-weight: bold; */ /* Comentei pois ao passar o mouse, o quadro aumentava e diminuia de tamanho */
 }
 
 .botao-tabela {
