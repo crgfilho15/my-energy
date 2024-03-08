@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    let custoMensalPorAparelho = [];
+
     function horasParaHHMM(horas) {
         // Separar a parte inteira das horas
         let horasCompletas = Math.floor(horas);
@@ -48,18 +50,35 @@ $(document).ready(function() {
             }
 
             let valorKWH = 1.016800;
+            let diasNoMes = 30;
             let potenciaAparelho = parseFloat($("#campo-potencia-aparelho").val()) / 1000;
             let valorDiario = 0;
             let valorMensal = 0;
             let horasDeUso = $("#campo-tempo-uso-horas-aparelho").val() == "" ? 0 : parseInt($("#campo-tempo-uso-horas-aparelho").val());
             let minutosDeUso = $("#campo-tempo-uso-minutos-aparelho").val() == "" ? 0 : parseInt($("#campo-tempo-uso-minutos-aparelho").val());
             let tempoUsoDiario = horasDeUso + (minutosDeUso / 60);
-            let tempoUsoMensal = tempoUsoDiario * 30;
+            let tempoUsoMensal = tempoUsoDiario * diasNoMes;
             let UsoDiarioKWH = tempoUsoDiario * potenciaAparelho;
             let UsoMensalKWH = UsoDiarioKWH * 30;
 
             valorDiario = UsoDiarioKWH * valorKWH;
             valorMensal = UsoMensalKWH * valorKWH;
+
+            custoMensalPorAparelho.push(valorMensal);
+
+            let valorTotal = custoMensalPorAparelho.reduce((total, valor) => total + valor, 0);
+
+            const percentualIluminacaoPublica = 0.05941397141;
+            let valorluminacaoPublica = percentualIluminacaoPublica * valorTotal;
+            valorluminacaoPublica = parseFloat(valorluminacaoPublica.toFixed(2));
+
+            $("#iluminacao-publica").text(`R$${valorluminacaoPublica}`);
+            $("#total-tabela").text(`R$${valorTotal.toFixed(2)}`);
+            
+            valorTotal += valorluminacaoPublica;
+            
+            $(".valor-final").text(`R$${valorTotal.toFixed(2)}`);
+            
 
             let horasPorMes = horasParaHHMM(tempoUsoMensal);
             let horas_aux_mensal = tempoUsoMensal;
@@ -72,7 +91,7 @@ $(document).ready(function() {
                 horas_aux_mensal = "horas";
             }
 
-            let aparelhos_cadastrados = $("#tabela-aparelhos-cadastrados").html();
+            let aparelhos_cadastrados = '';
 
             aparelhos_cadastrados += `<tr id="${$("#campo-nome-aparelho").val()}">`; // TO DO: VERIFICAR SE O ID JÁ EXISTE ANTES DE CRIAR (NÃO PODE REPETIR). POSSO CRIAR UM ARRAY DE ID'S E VERIFICAR
             aparelhos_cadastrados += `<td>${$("#campo-nome-aparelho").val()}</td>`;
@@ -86,6 +105,8 @@ $(document).ready(function() {
             aparelhos_cadastrados += `<td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>`;
             aparelhos_cadastrados += `<td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>`;
             aparelhos_cadastrados += `</tr>`;
+
+            aparelhos_cadastrados += $("#tabela-aparelhos-cadastrados").html();
 
             $("#tabela-aparelhos-cadastrados").html(aparelhos_cadastrados);
             $("#campo-nome-aparelho").val("");

@@ -216,6 +216,20 @@ input[type="number"]::-webkit-outer-spin-button {
     /* min-width: 1200px; */
 }
 
+.sem-borda {
+    border:unset;
+}
+
+.arraste-tabela {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .arraste-tabela {
+        display: initial;
+    }
+}
+
 th, td {
     border: 1px solid var(--cor-principal2);
     padding: 8px;
@@ -228,7 +242,7 @@ th {
     color: antiquewhite;
 }
 
-tbody tr:hover td:not(.botao-tabela) {
+tbody tr:hover td:not(.botao-tabela, .sem-borda) {
     background-color: var(--cor-principal); /* Define uma cor de fundo para as células quando o mouse passa por cima */
     border-color: var(--cor-hover);
     color: antiquewhite; /* Altera a cor do texto das células quando o mouse passa por cima */
