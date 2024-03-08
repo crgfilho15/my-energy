@@ -57,67 +57,6 @@
                 </div>
             </div>
 
-            <!-- Quadro de Exibição de Aparelhos Cadastrados -->
-            <div class="quadro">
-                <div class="espaco-titulo-quadro">
-                    <span class="titulo-quadro">Aparelhos Cadastrados</span>
-                </div>
-                <div class="tabela-quadro">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Aparelho</th>
-                                <th>Potência (W)</th>
-                                <th>Tempo de Uso Diário </th>
-                                <th>kWh/dia</th>
-                                <th>Custo Médio Diário</th>
-                                <th>Tempo de Uso Mensal </th>
-                                <th>kWh/mês</th>
-                                <th>Custo Médio Mensal</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabela-aparelhos-cadastrados">
-                            <tr id="Notebook">
-                                <td>Notebook</td>
-                                <td>90</td>
-                                <td>4 horas/dia</td>
-                                <td>1</td>
-                                <td>R$0,50/dia</td>
-                                <td>4 horas/mês</td>
-                                <td>30</td>
-                                <td>R$15,00/mês</td>
-                                <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
-                                <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
-                            </tr>
-                            <tr id="Geladeira">
-                                <td>Geladeira</td>
-                                <td>400</td>
-                                <td>24 horas/dia</td>
-                                <td>1</td>
-                                <td>R$2,00/dia</td>
-                                <td>4 horas/mês</td>
-                                <td>30</td>
-                                <td>R$60,00/mês</td>
-                                <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
-                                <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
-                            </tr>
-                            <tr id="Chuveiro">
-                                <td>Chuveiro</td>
-                                <td>6000</td>
-                                <td>20 min/dia</td>
-                                <td>1</td>
-                                <td>R$1,50/dia</td>
-                                <td>4 horas/mês</td>
-                                <td>30</td>
-                                <td>R$45,00/mês</td>
-                                <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
-                                <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
             <!-- Quadro de Descrição do Consumo -->
             <div class="quadro">
                 <div class="espaco-titulo-quadro">
@@ -181,49 +120,114 @@
                 </div>
             </div>
 
-        </div>
-    </main>
-
-    <div class="divisor espacamento-top"></div>
-    
-    <p class="direitos-pagina">© 2024 Carlos Roberto Garcia / MyEnergy. Todos os direitos reservados.</p>
-
-    <footer class="rodape">
-        <div class="div-rodape">
-            <div class="info-rodape">
-                <div class="titulo-rodape">
-                    <span>Contato</span>
+            <!-- Quadro de Exibição de Aparelhos Cadastrados -->
+            <div class="quadro aparelhos-cadastrados">
+                <div class="espaco-titulo-quadro">
+                    <span class="titulo-quadro">Aparelhos Cadastrados</span>
                 </div>
-                <a href="mailto:crgfilho15@gmail.com" target="_blank">
-                    <img class="img-contato" src="https://logosmarcas.net/wp-content/uploads/2020/11/Gmail-Logo.png" alt="">
-                </a>
-            </div>
-    
-            <div class="info-rodape tam-max">
-                <div class="titulo-rodape-texto">
-                    <span>Projeto</span>
-                </div>
-                <div class="texto-scroll">
-                    <div class="texto">
-                        <p>Este projeto é open source e foi criado com o objetivo de ajudar as pessoas a simularem o custo da conta de energia elétrica em suas casas. Estamos abertos para colaborações e melhorias, então sinta-se à vontade para contribuir no nosso repositório no GitHub.</p>
-                        <p>Por favor, note que esta é uma iniciativa independente e não possui relação com nenhuma concessionária de energia elétrica. Nosso objetivo é fornecer uma ferramenta útil e transparente para ajudar os usuários a entenderem melhor seus gastos com energia.</p>
+                <div class="tabela-quadro">
+                    <div class="tabela-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Aparelho</th>
+                                    <th>Potência (W)</th>
+                                    <th>Tempo de Uso Diário </th>
+                                    <th>kWh/dia</th>
+                                    <th>Custo Médio Diário</th>
+                                    <th>Tempo de Uso Mensal </th>
+                                    <th>kWh/mês</th>
+                                    <th>Custo Médio Mensal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela-aparelhos-cadastrados">
+                                <!-- <tr id="Notebook">
+                                    <td>Notebook</td>
+                                    <td>90</td>
+                                    <td>4 horas/dia</td>
+                                    <td>1</td>
+                                    <td>R$0,50/dia</td>
+                                    <td>4 horas/mês</td>
+                                    <td>30</td>
+                                    <td>R$15,00/mês</td>
+                                    <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                    <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                                </tr>
+                                <tr id="Geladeira">
+                                    <td>Geladeira</td>
+                                    <td>400</td>
+                                    <td>24 horas/dia</td>
+                                    <td>1</td>
+                                    <td>R$2,00/dia</td>
+                                    <td>4 horas/mês</td>
+                                    <td>30</td>
+                                    <td>R$60,00/mês</td>
+                                    <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                    <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                                </tr>
+                                <tr id="Chuveiro">
+                                    <td>Chuveiro</td>
+                                    <td>6000</td>
+                                    <td>20 min/dia</td>
+                                    <td>1</td>
+                                    <td>R$1,50/dia</td>
+                                    <td>4 horas/mês</td>
+                                    <td>30</td>
+                                    <td>R$45,00/mês</td>
+                                    <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                    <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-    
-            <div class="info-rodape">
-                <div class="titulo-rodape">
-                    <span>Redes Sociais</span>
-                </div>
-                <a href="https://www.linkedin.com/in/carlosrobertogarcia/" target="_blank">
-                    <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png" alt="">
-                </a>
-                <a href="https://github.com/crgfilho15" target="_blank">
-                    <img class="img" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="">
-                </a>
-            </div>
+
         </div>
-    </footer>
+    </main>
+
+    <div class="footer">
+        <div class="divisor espacamento-top"></div>
+        
+        <p class="direitos-pagina">© 2024 Carlos Roberto Garcia / MyEnergy. Todos os direitos reservados.</p>
+
+        <footer class="rodape">
+            <div class="div-rodape">
+                <div class="info-rodape">
+                    <div class="titulo-rodape">
+                        <span>Contato</span>
+                    </div>
+                    <a href="mailto:crgfilho15@gmail.com" target="_blank">
+                        <img class="img-contato" src="https://logosmarcas.net/wp-content/uploads/2020/11/Gmail-Logo.png" alt="">
+                    </a>
+                </div>
+        
+                <div class="info-rodape tam-max">
+                    <div class="titulo-rodape-texto">
+                        <span>Projeto</span>
+                    </div>
+                    <div class="texto-scroll">
+                        <div class="texto">
+                            <p>Este projeto é open source e foi criado com o objetivo de ajudar as pessoas a simularem o custo da conta de energia elétrica em suas casas. Estamos abertos para colaborações e melhorias, então sinta-se à vontade para contribuir no nosso repositório no GitHub.</p>
+                            <p>Por favor, note que esta é uma iniciativa independente e não possui relação com nenhuma concessionária de energia elétrica. Nosso objetivo é fornecer uma ferramenta útil e transparente para ajudar os usuários a entenderem melhor seus gastos com energia.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="info-rodape">
+                    <div class="titulo-rodape">
+                        <span>Redes Sociais</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/carlosrobertogarcia/" target="_blank">
+                        <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/480px-LinkedIn_logo_initials.png" alt="">
+                    </a>
+                    <a href="https://github.com/crgfilho15" target="_blank">
+                        <img class="img" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
     <script src="js/script.js"></script>
 </body>
 
