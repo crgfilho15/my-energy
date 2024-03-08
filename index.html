@@ -69,37 +69,49 @@
                                 <th>Aparelho</th>
                                 <th>Potência (W)</th>
                                 <th>Tempo de Uso Diário </th>
+                                <th>kWh/dia</th>
                                 <th>Custo Médio Diário</th>
+                                <th>Tempo de Uso Mensal </th>
+                                <th>kWh/mês</th>
                                 <th>Custo Médio Mensal</th>
                             </tr>
                         </thead>
                         <tbody id="tabela-aparelhos-cadastrados">
-                            <tr>
+                            <tr id="Notebook">
                                 <td>Notebook</td>
                                 <td>90</td>
                                 <td>4 horas/dia</td>
+                                <td>1</td>
                                 <td>R$0,50/dia</td>
+                                <td>4 horas/mês</td>
+                                <td>30</td>
                                 <td>R$15,00/mês</td>
-                                <td class="botao-tabela"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
-                                <td class="botao-tabela"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                                <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
                             </tr>
-                            <tr>
+                            <tr id="Geladeira">
                                 <td>Geladeira</td>
                                 <td>400</td>
                                 <td>24 horas/dia</td>
+                                <td>1</td>
                                 <td>R$2,00/dia</td>
+                                <td>4 horas/mês</td>
+                                <td>30</td>
                                 <td>R$60,00/mês</td>
-                                <td class="botao-tabela"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
-                                <td class="botao-tabela"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                                <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
                             </tr>
-                            <tr>
+                            <tr id="Chuveiro">
                                 <td>Chuveiro</td>
                                 <td>6000</td>
                                 <td>20 min/dia</td>
+                                <td>1</td>
                                 <td>R$1,50/dia</td>
+                                <td>4 horas/mês</td>
+                                <td>30</td>
                                 <td>R$45,00/mês</td>
-                                <td class="botao-tabela"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
-                                <td class="botao-tabela"><i class="fa-solid fa-trash botao-excluir"></i></td>
+                                <td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>
+                                <td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>
                             </tr>
                         </tbody>
                     </table>
@@ -113,6 +125,18 @@
                 </div>
                 <div class="tabela-quadro">
                     <table class="tabela-valores">
+                        <tbody>
+                          <tr>
+                            <th>Custo do kWh</th>
+                            <td>R$1.0168</td>
+                          </tr>
+                          <tr>
+                            <th>Contribuição com Iluminação Pública</th>
+                            <td>R$5.86</td> <!-- TO DO: Cálculo correto -->
+                          </tr>
+                        </tbody>
+                      </table>
+                    <!-- <table class="tabela-valores">
                         <tbody>
                           <tr>
                             <th>Serviço de distribuição de energia</th>
@@ -143,8 +167,7 @@
                             <td>R$0</td>
                           </tr>
                         </tbody>
-                      </table>
-                      
+                      </table> -->
                 </div>
             </div>
 
@@ -181,9 +204,10 @@
                     <span>Projeto</span>
                 </div>
                 <div class="texto-scroll">
-                    <p>Este projeto é open source e foi criado com o objetivo de ajudar as pessoas a simularem o custo da conta de energia elétrica em suas casas. Estamos abertos para colaborações e melhorias, então sinta-se à vontade para contribuir no nosso repositório no GitHub.</p>
-                    
-                    <p>Por favor, note que esta é uma iniciativa independente e não possui relação com nenhuma concessionária de energia elétrica. Nosso objetivo é fornecer uma ferramenta útil e transparente para ajudar os usuários a entenderem melhor seus gastos com energia.</p>
+                    <div class="texto">
+                        <p>Este projeto é open source e foi criado com o objetivo de ajudar as pessoas a simularem o custo da conta de energia elétrica em suas casas. Estamos abertos para colaborações e melhorias, então sinta-se à vontade para contribuir no nosso repositório no GitHub.</p>
+                        <p>Por favor, note que esta é uma iniciativa independente e não possui relação com nenhuma concessionária de energia elétrica. Nosso objetivo é fornecer uma ferramenta útil e transparente para ajudar os usuários a entenderem melhor seus gastos com energia.</p>
+                    </div>
                 </div>
             </div>
     

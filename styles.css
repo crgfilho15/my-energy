@@ -201,26 +201,20 @@ tbody tr:hover td:not(.botao-tabela) {
 }
 
 .botao-tabela {
+    color: #fff;
     border: none;
-    padding: 4px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .botao-excluir {
     background-color: red;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+
 }
 
 .botao-editar {
     background-color: var(--cor-principal);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 .tabela-valores tr:hover th {
@@ -246,6 +240,10 @@ tbody tr:hover td:not(.botao-tabela) {
     font-size: 30px;
     color: var(--cor-principal);
 }
+
+/* .valor-final:hover {
+    color: var(--cor-principal2);
+} */
 
 /* Divisor */
 
@@ -290,6 +288,10 @@ tbody tr:hover td:not(.botao-tabela) {
     border-bottom: 3px solid var(--cor-principal2);
 }
 
+.titulo-rodape:hover {
+    border-bottom: 3px solid var(--cor-principal);
+}
+
 .img-contato {
     width: 4vw;
     height: auto;
@@ -299,6 +301,10 @@ tbody tr:hover td:not(.botao-tabela) {
 .titulo-rodape-texto {
     border-bottom: 3px solid var(--cor-principal2);
     margin-bottom: 5px;
+}
+
+.titulo-rodape-texto:hover {
+    border-bottom: 3px solid var(--cor-principal);
 }
 
 .tam-max {
@@ -313,6 +319,10 @@ tbody tr:hover td:not(.botao-tabela) {
     overflow-y: scroll; /* Adiciona uma barra de rolagem vertical quando necessário */
     height: 100px; /* Altura máxima do texto antes da barra de rolagem aparecer */
     margin-bottom: 10px;
+}
+
+.texto {
+    margin-right: 10px;
 }
 
 .img {
