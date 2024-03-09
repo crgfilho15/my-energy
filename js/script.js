@@ -1,6 +1,9 @@
 $(document).ready(function() {
 
-    let custoMensalPorAparelho = [];
+    var custoMensalPorAparelho = [];
+    var listAparelhosCadastrados = [];
+    var id = -1;
+    var idSelecionado;
 
     function horasParaHHMM(horas) {
         // Separar a parte inteira das horas
@@ -63,23 +66,7 @@ $(document).ready(function() {
 
             valorDiario = UsoDiarioKWH * valorKWH;
             valorMensal = UsoMensalKWH * valorKWH;
-
-            custoMensalPorAparelho.push(valorMensal);
-
-            let valorTotal = custoMensalPorAparelho.reduce((total, valor) => total + valor, 0);
-
-            const percentualIluminacaoPublica = 0.05941397141;
-            let valorluminacaoPublica = percentualIluminacaoPublica * valorTotal;
-            valorluminacaoPublica = parseFloat(valorluminacaoPublica.toFixed(2));
-
-            $("#iluminacao-publica").text(`R$${valorluminacaoPublica}`);
-            $("#total-tabela").text(`R$${valorTotal.toFixed(2)}`);
             
-            valorTotal += valorluminacaoPublica;
-            
-            $(".valor-final").text(`R$${valorTotal.toFixed(2)}`);
-            
-
             let horasPorMes = horasParaHHMM(tempoUsoMensal);
             let horas_aux_mensal = tempoUsoMensal;
             
@@ -90,33 +77,107 @@ $(document).ready(function() {
             } else {
                 horas_aux_mensal = "horas";
             }
+            
+            if ($("#botao_cadastrar").text() == "Cadastrar") {
+                id++;
+                
+                let novoAparelho = {
+                    id: id,
+                    nome: $("#campo-nome-aparelho").val(),
+                    potencia: $("#campo-potencia-aparelho").val(),
+                    tempoUsoDiario: `${horas}:${minutos} ${horas_aux}`,
+                    usoDiarioKWH: UsoDiarioKWH.toFixed(2),
+                    valorDiario: valorDiario.toFixed(2),
+                    tempoUsoMensal: `${horasPorMes} ${horas_aux_mensal}`,
+                    usoMensalKWH: UsoMensalKWH.toFixed(2),
+                    valorMensal: valorMensal.toFixed(2)
+                };
+            
+                listAparelhosCadastrados.unshift(novoAparelho);
+                
+                console.log(listAparelhosCadastrados);
+
+            } else if ($("#botao_cadastrar").text() == "Editar"){
+
+                let idLinha = idSelecionado;
+
+                let objetoEncontrado = listAparelhosCadastrados.find(objeto => objeto.id == idLinha);
+
+                objetoEncontrado.nome = $("#campo-nome-aparelho").val();
+                objetoEncontrado.potencia = $("#campo-potencia-aparelho").val();
+                objetoEncontrado.tempoUsoDiario = `${horas}:${minutos} ${horas_aux}`;
+                objetoEncontrado.usoDiarioKWH = UsoDiarioKWH.toFixed(2);
+                objetoEncontrado.valorDiario = `${valorDiario.toFixed(2)}`;
+                objetoEncontrado.tempoUsoMensal = `${horasPorMes} ${horas_aux_mensal}`;
+                objetoEncontrado.usoMensalKWH = UsoMensalKWH.toFixed(2);
+                objetoEncontrado.valorMensal = `${valorMensal.toFixed(2)}`;
+            }
 
             let aparelhos_cadastrados = '';
+            listAparelhosCadastrados.forEach(aparelho => {
+                aparelhos_cadastrados += `<tr id="${aparelho.id}">`;
+                aparelhos_cadastrados += `<td>${aparelho.nome}</td>`;
+                aparelhos_cadastrados += `<td>${aparelho.potencia}</td>`;
+                aparelhos_cadastrados += `<td>${aparelho.tempoUsoDiario}/dia</td>`;
+                aparelhos_cadastrados += `<td>${aparelho.usoDiarioKWH}</td>`;
+                aparelhos_cadastrados += `<td>R$${aparelho.valorDiario}/dia</td>`;
+                aparelhos_cadastrados += `<td>${aparelho.tempoUsoMensal}/mês</td>`;
+                aparelhos_cadastrados += `<td>${aparelho.usoMensalKWH}</td>`;
+                aparelhos_cadastrados += `<td>R$${aparelho.valorMensal}/mês</td>`;
+                aparelhos_cadastrados += `<td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square"></i></td>`;
+                aparelhos_cadastrados += `<td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash"></i></td>`;
+                aparelhos_cadastrados += `</tr>`;
+            });
 
-            aparelhos_cadastrados += `<tr id="${$("#campo-nome-aparelho").val()}">`; // TO DO: VERIFICAR SE O ID JÁ EXISTE ANTES DE CRIAR (NÃO PODE REPETIR). POSSO CRIAR UM ARRAY DE ID'S E VERIFICAR
-            aparelhos_cadastrados += `<td>${$("#campo-nome-aparelho").val()}</td>`;
-            aparelhos_cadastrados += `<td>${$("#campo-potencia-aparelho").val()}</td>`;
-            aparelhos_cadastrados += `<td>${horas}:${minutos} ${horas_aux}/dia</td>`;
-            aparelhos_cadastrados += `<td>${UsoDiarioKWH.toFixed(2)}`;
-            aparelhos_cadastrados += `<td>R$${valorDiario.toFixed(2)}/dia</td>`;
-            aparelhos_cadastrados += `<td>${horasPorMes} ${horas_aux_mensal}/mês</td>`;
-            aparelhos_cadastrados += `<td>${UsoMensalKWH.toFixed(2)}`;
-            aparelhos_cadastrados += `<td>R$${valorMensal.toFixed(2)}/mês</td>`;
-            aparelhos_cadastrados += `<td class="botao-tabela botao-editar"><i class="fa-solid fa-pen-to-square botao-editar"></i></td>`;
-            aparelhos_cadastrados += `<td class="botao-tabela botao-excluir"><i class="fa-solid fa-trash botao-excluir"></i></td>`;
-            aparelhos_cadastrados += `</tr>`;
-
-            aparelhos_cadastrados += $("#tabela-aparelhos-cadastrados").html();
-
+            let valorTotal = 0;
+            listAparelhosCadastrados.forEach(aparelho => {
+                valorTotal += parseFloat(aparelho.valorMensal);
+            });
+            
+            const percentualIluminacaoPublica = 0.05941397141;
+            let valorluminacaoPublica = percentualIluminacaoPublica * valorTotal;
+            valorluminacaoPublica = parseFloat(valorluminacaoPublica.toFixed(2));
+            
+            $("#iluminacao-publica").text(`R$${valorluminacaoPublica}`);
+            $("#total-tabela").text(`R$${valorTotal.toFixed(2)}`);
+            
+            valorTotal += valorluminacaoPublica;
+            
+            $(".valor-final").text(`R$${valorTotal.toFixed(2)}`);
+            
             $("#tabela-aparelhos-cadastrados").html(aparelhos_cadastrados);
+            
             $("#campo-nome-aparelho").val("");
             $("#campo-potencia-aparelho").val("");
             $("#campo-tempo-uso-horas-aparelho").val("");
             $("#campo-tempo-uso-minutos-aparelho").val("");
+            $("#botao_cadastrar").text("Cadastrar");
         } catch (err) {
             alert(err);
         }
     });
 
+    $(document).on("click", ".botao-editar", function() {
+        let idRegistro = $(this).closest("tr").attr("id");
+        let linha = $(this).closest("tr");
+        let informacoes = [];
+        linha.find("td").each(function() {
+            informacoes.push($(this).text());
+        });
+
+        let horas = informacoes[2].slice(0, 2);
+        horas = parseInt(horas);
+        let minutos = informacoes[2].slice(3, 5);
+        minutos = parseInt(minutos);
+
+        idSelecionado = idRegistro;
+
+        $("#campo-nome-aparelho").val(informacoes[0]);
+        $("#campo-potencia-aparelho").val(informacoes[1]);
+        $("#campo-tempo-uso-horas-aparelho").val(horas);
+        $("#campo-tempo-uso-minutos-aparelho").val(minutos);
+        
+        $("#botao_cadastrar").text("Editar");
+    });
 
 });
