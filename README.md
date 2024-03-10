@@ -7,8 +7,8 @@ O My Energy é um projeto que visa ajudar os usuários a estimarem o consumo de 
 ## Recursos (projeto em desenvolvimento)
 
 - [x] Desenvolvimento do front-end
-- [ ] Desenvolvimento do back-end
-- [ ] Cálculo do consumo de energia
+- [x] Desenvolvimento do back-end
+- [x] Cálculo do consumo de energia
 - [ ] Registro de usuários e autenticação
 - [ ] Personalização de perfis de usuários
 
